@@ -1,7 +1,14 @@
+'use client';
+
 import Image from 'next/image';
 import type { Card } from '@/types';
 
-export default function CardEl({ card }: { card: Card }) {
+type CardElProps = {
+  card: Card;
+  timeframe: 'daily' | 'weekly' | 'monthly';
+};
+
+export default function CardEl({ card, timeframe }: CardElProps) {
   // Bg-color mapping
   const bgColors: Record<string, string> = {
     Work: 'bg-[var(--cust-orange-300)]',
@@ -21,9 +28,18 @@ export default function CardEl({ card }: { card: Card }) {
     Social: '/icon-social.svg',
     'Self Care': '/icon-self-care.svg',
   };
+
+  // Timeframe mapping
+  const time: Record<string, string> = {
+    daily: 'Yesterday',
+    weekly: 'Last Week',
+    monthly: 'Last Month',
+  };
   const iconSrc = icons[card.title] || '/icon-default.svg';
 
   const bgClass = bgColors[card.title] || bgColors.default;
+
+  const lastTime = time[timeframe];
 
   return (
     <div
@@ -34,7 +50,7 @@ export default function CardEl({ card }: { card: Card }) {
         alt=""
         width={76}
         height={77}
-        className="absolute -top-1 right-4 z-0 "
+        className="absolute -top-2 right-3 z-0 "
       />
       <div className="bg-[var(--cust-navy-900)] p-6 rounded-[15px] relative z-10">
         <h2 className="text-white preset-5-md flex justify-between items-center">
@@ -45,10 +61,10 @@ export default function CardEl({ card }: { card: Card }) {
         </h2>
         <div className="flex items-center justify-between">
           <h3 className="preset-3 text-white">
-            {card.timeframes.daily.current}
+            {card.timeframes[timeframe].current}hrs
           </h3>
           <h4 className="preset-6 text-[var(--cust-navy-200)]">
-            {card.timeframes.daily.previous}
+            {lastTime} - {card.timeframes[timeframe].previous}hrs
           </h4>
         </div>
       </div>

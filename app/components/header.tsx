@@ -1,6 +1,13 @@
+'use client';
+
 import Image from 'next/image';
 
-export default function Header() {
+type HeaderProps = {
+  timeframe: 'daily' | 'weekly' | 'monthly';
+  setTimeframe: (tf: 'daily' | 'weekly' | 'monthly') => void;
+};
+
+export default function Header({ timeframe, setTimeframe }: HeaderProps) {
   return (
     <div className="bg-[var(--cust-navy-900)] rounded-[15px] w-[327px]">
       <div className="flex items-center bg-[var(--cust-purple-600)] p-8 rounded-[15px] ">
@@ -17,15 +24,18 @@ export default function Header() {
         </div>
       </div>
       <ul className="text-[var(--cust-purple-500)] flex justify-around py-6 preset-5-reg">
-        <li>
-          <button className="hover:text-white cursor-pointer">Daily</button>
-        </li>
-        <li>
-          <button className="hover:text-white cursor-pointer">Weekly</button>
-        </li>
-        <li>
-          <button className="hover:text-white cursor-pointer">Monthly</button>
-        </li>
+        {(['daily', 'weekly', 'monthly'] as const).map((tf) => (
+          <li key={tf}>
+            <button
+              className={`hover:text-white cursor-pointer ${
+                timeframe === tf ? 'text-white' : ''
+              }`}
+              onClick={() => setTimeframe(tf)}
+            >
+              {tf.charAt(0).toUpperCase() + tf.slice(1)}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
