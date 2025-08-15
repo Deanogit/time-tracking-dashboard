@@ -26,15 +26,15 @@ export default function CardEl({ card }: { card: Card }) {
   const bgClass = bgColors[card.title] || bgColors.default;
 
   return (
-    <div className={`rounded-[15px] w-[327px] ${bgClass} pt-[38px] relative`}>
-      {/**  Conditionally render card bg **/}
-      {/** Conditionally render the svg **/}
+    <div
+      className={`rounded-[15px] w-[327px] ${bgClass} pt-[38px] relative overflow-hidden`}
+    >
       <Image
         src={iconSrc}
         alt=""
         width={76}
         height={77}
-        className="absolute top-0 right-4 z-0"
+        className="absolute -top-1 right-4 z-0 "
       />
       <div className="bg-[var(--cust-navy-900)] p-6 rounded-[15px] relative z-10">
         <h2 className="text-white preset-5-md flex justify-between items-center">
