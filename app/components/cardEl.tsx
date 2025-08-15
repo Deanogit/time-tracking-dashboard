@@ -14,11 +14,11 @@ export default function CardEl({ card }: { card: Card }) {
 
   // Icon mapping
   const icons: Record<string, string> = {
-    Work: '/icon-Work.svg',
-    Play: '/icon-Play.svg',
-    Study: '/icon-Study.svg',
-    Exercise: '/icon-Exercise.svg',
-    Social: '/icon-Social.svg',
+    Work: '/icon-work.svg',
+    Play: '/icon-play.svg',
+    Study: '/icon-study.svg',
+    Exercise: '/icon-exercise.svg',
+    Social: '/icon-social.svg',
     'Self Care': '/icon-self-care.svg',
   };
   const iconSrc = icons[card.title] || '/icon-default.svg';
