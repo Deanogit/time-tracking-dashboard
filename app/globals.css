@@ -1,15 +1,27 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --cust-navy-950: #0e1323;
+  --cust-navy-900: #1c204b;
+  --cust-navy-800: #33397a;
+  --cust-navy-200: #bbc0ff;
+  --cust-orange-300: #ff8b64;
+  --cust-purple-700: #7335d2;
+  --cust-purple-600: #5747ea;
+  --cust-purple-500: #7078c9;
+  --cust-blue-300: #55c2e6;
+  --cust-pink-400: #ff5e7d;
+  --cust-green-400: #4bcf82;
+  --cust-yellow-300: #f1c75b;
+  --cust-grey-200: #d8d8d8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-rubik-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +34,52 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Rubik, Arial, Helvetica, sans-serif;
+}
+
+@utility preset-1 {
+  font-size: 56px;
+  line-height: 66px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+@utility preset-2 {
+  font-size: 40px;
+  line-height: 47px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+@utility preset-3 {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+@utility preset-4 {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0px;
+  font-weight: 300;
+}
+
+@utility preset-5-md {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0px;
+  font-weight: 500;
+}
+@utility preset-5-reg {
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0px;
+  font-weight: 400;
+}
+
+@utility preset-6 {
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0px;
+  font-weight: 400;
 }
