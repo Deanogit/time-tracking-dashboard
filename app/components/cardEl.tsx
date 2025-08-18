@@ -43,7 +43,7 @@ export default function CardEl({ card, timeframe }: CardElProps) {
 
   return (
     <div
-      className={`rounded-[15px] w-[327px] md:w-[188px] ${bgClass} pt-[38px] relative overflow-hidden mx-auto`}
+      className={`rounded-[15px] w-[327px] md:w-[188px] lg:w-[255px] lg:h-[244px] ${bgClass} pt-[38px] relative overflow-hidden mx-auto`}
     >
       <Image
         src={iconSrc}
@@ -52,8 +52,8 @@ export default function CardEl({ card, timeframe }: CardElProps) {
         height={77}
         className="absolute -top-2 right-3 z-0 "
       />
-      <div className="bg-[var(--cust-navy-900)] p-6 rounded-[15px] relative z-10 hover:bg-[var(--cust-navy-800)] cursor-pointer">
-        <h2 className="text-white preset-5-md flex justify-between items-center md:mb-4">
+      <div className="bg-[var(--cust-navy-900)] p-6 lg:p-8 lg:bottom-0 lg:absolute lg:w-full rounded-[15px] relative z-10 hover:bg-[var(--cust-navy-800)] cursor-pointer">
+        <h2 className="text-white preset-5-md flex justify-between items-center md:mb-4 lg:mb-6">
           {card.title}
           <span className="text-[var(--cust-navy-200)]">
             &#x2022;&#x2022;&#x2022;
