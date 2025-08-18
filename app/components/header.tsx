@@ -9,7 +9,7 @@ type HeaderProps = {
 
 export default function Header({ timeframe, setTimeframe }: HeaderProps) {
   return (
-    <div className="bg-[var(--cust-navy-900)] rounded-[15px] w-[327px]">
+    <div className="bg-[var(--cust-navy-900)] rounded-[15px]  w-[327px] md:w-[612px]  md:col-span-3 lg:col-span-1 lg:row-span-2 lg:w-[255px] mx-auto">
       <div className="flex items-center bg-[var(--cust-purple-600)] p-8 rounded-[15px] ">
         <Image
           src="/image-jeremy.png"
@@ -23,7 +23,7 @@ export default function Header({ timeframe, setTimeframe }: HeaderProps) {
           <h1 className="preset-4 text-white">Jeremy Robson</h1>
         </div>
       </div>
-      <ul className="text-[var(--cust-purple-500)] flex justify-around py-6 preset-5-reg">
+      <ul className="text-[var(--cust-purple-500)] flex justify-around py-6 preset-5-reg md:w-[343px] mx-auto">
         {(['daily', 'weekly', 'monthly'] as const).map((tf) => (
           <li key={tf}>
             <button

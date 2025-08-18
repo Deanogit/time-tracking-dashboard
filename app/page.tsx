@@ -23,7 +23,7 @@ export default function Home() {
   const data = getAllCards();
   console.log(data);
   return (
-    <div className="bg-[var(--cust-navy-950)] grid gap-6 min-h-[100vh] justify-center items-center py-20">
+    <div className="grid gap-6 justify-center items-center py-20 grid-cols-1 md:grid-cols-3 md:grid-rows-3 w-[327px] md:w-[612px] lg:grid-cols-4 lg:grid-rows-2 lg:w-[1116px] mx-auto">
       <Header timeframe={timeframe} setTimeframe={setTimeframe} />
       {cards
         ? cards.map((card) => (
