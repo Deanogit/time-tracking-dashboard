@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable}  antialiased  min-h-[100vh] items-center justify-center`}
+        className={`${rubik.variable}  antialiased  min-h-[100vh] items-center justify-center grid`}
       >
         {children}
       </body>
